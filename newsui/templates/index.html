@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Articles</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        tr:hover { background-color: #f9f9f9; }
+        a { color: blue; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h2>📰 News Articles from MongoDB</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Source</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>URL</th>
+                <th>Published Time</th>
+                <th>Source Name</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for article in articles %}
+            <tr>
+                <td>{{ article.source }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.description }}</td>
+                <td><a href="{{ article.url }}" target="_blank">Link</a></td>
+                <td>{{ article.publishedTime }}</td>
+                <td>{{ article.sourcename }}</td>
+                <td>{{ article.author }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
